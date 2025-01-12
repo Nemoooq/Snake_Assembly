@@ -1,5 +1,5 @@
 ; Program Snake.asm
-; On clock interrupt the snake moves in the direction of the arrow keys
+; On clock interrupt the snake moves in the direction of the wasd keys
 ; Executing in real mode (DosBox); or in a virtual machine
 ; Quitting after pressing the 'x' key
 ; asembly (MASM 4.0): masm snake.asm;
