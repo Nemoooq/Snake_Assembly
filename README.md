@@ -8,8 +8,8 @@ Project of classic Snake game written in assembler MASM. Some things still need 
   (GameFiles = LINK.exe ; MASM.exe ; snake.asm)
   This command mount given path to disc d on the virtual machine.
 3. Move to mounted disc by writing D:
-4. Write masm snake.asm to create obj file of game.
-5. Write link snake.obj to create snake.exe
+4. Write "masm snake.asm;" to create obj file of game.
+5. Write "link snake.obj;" to create snake.exe
 6. To start game write snake
 
 # How to play game?
