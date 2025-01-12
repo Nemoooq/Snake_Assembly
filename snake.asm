@@ -15,7 +15,7 @@ ASSUME cs:program
     timeMS dd 0               ;Variable storing the time in milliseconds
     timeS dw 0                ;Variable storing the time in seconds (Program measure when 1000 ms in time variable has passed)
     isFruitSpawned db 0       ;Variable storing the information about the fruit spawn
-    snakeLength dw 1          ;Variable storing the length of the snake
+    snakeLength dw 5          ;Variable storing the length of the snake
     pointsPosition dw 80      ;Variable storing the position of the points counter
     numberOfPositions dw 4000 ;Remember to change this value if you change the size of the stackArea table
     stackArea DW 4000 dup(0)  ;Table storing the snake's positions (4000 because there is 4000 bytes of screen memory)
