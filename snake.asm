@@ -285,28 +285,26 @@ start:
     mov direction, 0                    ; Set the starting direction of the snake
     call clearScreen                    ; Clear the screen
 
-    ; i dont have any fucking clue what is happening there
+
     mov al, 0
     mov ah, 5
     int 10
     mov ax, 0
-    mov ds,ax ; zerowanie rejestru DS
+    mov ds,ax 
     
-    ; odczytanie zawartości wektora nr 8 i zapisanie go
-    ; w zmiennej 'wektor8' (wektor nr 8 zajmuje w pamięci 4 bajty
-    ; począwszy od adresu fizycznego 8 * 4 = 32)
-    mov eax,ds:[32] ; adres fizyczny 0*16 + 32 = 32
+    ; read value of wektor8
+    mov eax,ds:[32]
     mov cs:wektor8, eax
 
-    ; wpisanie do wektora nr 8 adresu procedury 'obsluga_zegara'
-    mov ax, SEG move ; część segmentowa adresu
-    mov bx, OFFSET move ; offset adresu
-    cli ; zablokowanie przerwań
-    ; zapisanie adresu procedury do wektora nr 8
-    mov ds:[32], bx ; OFFSET
-    mov ds:[34], ax ; cz. segmentowa
-    sti ;odblokowanie przerwań
-    ; oczekiwanie na naciśnięcie klawisza 'x'
+    ;writing move function as clock interupt handler 
+    mov ax, SEG move 
+    mov bx, OFFSET move
+    cli 
+
+    ;wirte address of wektor8 procedure
+    mov ds:[32], bx 
+    mov ds:[34], ax 
+    sti 
 
 waitForKey:
     cmp byte PTR collision, 1
