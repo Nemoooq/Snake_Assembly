@@ -255,7 +255,6 @@ clear_loop:
     cmp dx, 158                  
     je border:               
 
-border:
     ; empty characters inside the board
     mov byte PTR es:[bx], ' '      
     mov byte PTR es:[bx+1], 00001100b 
